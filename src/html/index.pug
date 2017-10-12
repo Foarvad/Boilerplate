@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<title>Страница</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="cleartype" content="on"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	//- <meta name="title" content="title in SEO">
-	//- <meta name="description" content="Description">
-	//- <meta name="keywords" content="Key words">
-	//- <link rel="shortcut icon" href="favicon.ico">
-	//- <link rel="icon" href="favicon.ico">
-	//- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-	//- <meta name="HandheldFriendly" content="true">
-	<link rel="stylesheet" type="text/css" href="styles/libs.min.css">
-	<link rel="stylesheet" type="text/css" href="styles/common.css">
-	<link rel="stylesheet" type="text/css" href="styles/home.css">
-</head>
-<body>
-	include common/header.pug
-
-
-
-	include common/footer.pug
-	<script src="js/libs.min.js"></script>
-	<script src="js/common.js"></script>
-	<script src="js/home.js"></script>
-</body>
-</html>
+extends templates/layout
+block vars
+	- var title = "Homepage"
+	- var name = "home"
+block content
+	h1 Here it begins
