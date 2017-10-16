@@ -1,0 +1,72 @@
+
+
+
+
+
+/*Main colors ———————————————————————*/
+black = #1b1b1b
+black-text = rgba(0,0,0,.8)
+
+
+/*Box shadow ———————————————————————*/
+btn-shadow = 0 30px 52px -12px rgba(0, 0, 0, 0.3)
+img-shadow = 0 40px 102px -12px rgba(80,91,96, 0.65)
+
+
+/*Media ——————————————————————————*/
+// xs-width = 768px
+// sm-width = 1024px
+// lg-width = 1600px
+
+
+
+
+
+
+/*MIXIN Box shadow —————————————————————*/
+bth-shadow($n) {
+	box-shadow 0 30px 52px -12px $n
+}
+img-shadow($n)
+	box-shadow 0 40px 102px -12px $n
+
+
+/*MIXIN Text styles ——————————————————————*/
+text($font-size, $font-weight, $font-family, $color, $line-height)
+	font-size $font-size
+	font-weight $font-weight
+	font-family $font-family, 'Trebuchet MS', 'Tahoma', 'Arial', 'sans-serif'
+	color $color
+	line-height $line-height
+	
+center()
+	position absolute
+	left 50%
+	top: 50%
+	right auto
+	bottom auto
+	transform translate(-50%, -50%)
+	
+vert()
+	position absolute
+	top 50%
+	bottom auto
+	transform translate(0, -50%)
+
+hor()
+	position absolute
+	left 50%
+	right auto
+	transform translate(-50%, 0)
+
+/*MIXIN Media —————————————————————*/
+
+
+xs-width = 768
+sm-width = 1024
+lg-width = 1600
+
+xs = "(max-width: + " + (xs-width - 1) + "px)"
+sm = "(min-width: + " + xs-width + "px) and (max-width: + " + (sm-width - 1) + "px)"
+md = "(min-width: + " + sm-width + "px)"
+lg = "(min-width: + " + lg-width + "px)"
