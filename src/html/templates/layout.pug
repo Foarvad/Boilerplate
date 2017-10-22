@@ -3,7 +3,7 @@ block vars
 html
 	head
 		//- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-		title #{title} | Website's title
+		title #{title}
 		meta(http-equiv="Content-Type", content="text/html, charset=utf-8")
 		meta(http-equiv="cleartype", content="on")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
@@ -15,7 +15,7 @@ html
 		link(rel="icon", href="favicon.ico")
 		link(rel="stylesheet", type="text/css", href="styles/libs.min.css")
 		link(rel="stylesheet", type="text/css", href="styles/common.css")
-		link(rel="stylesheet", type="text/css", href="styles/" + name + ".css")
+		link(rel="stylesheet", type="text/css", href="styles/" + cssJsName + ".css")
 	body
 		include components/header.pug
 		.page-content
@@ -26,4 +26,4 @@ html
 		include components/footer.pug
 		script(src="js/libs.min.js")
 		script(src="js/common.js")
-		script(src="js/" + name + ".js")
+		script(src="js/" + cssJsName + ".js")
