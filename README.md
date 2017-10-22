@@ -44,7 +44,7 @@ node -v
 
 ### Npm
 
-[Npm](https://www.npmjs.com) is distributed with Node.js. So, just need to update it if needed.
+[Npm](https://www.npmjs.com) is distributed with Node.js. So, you just got to update it if needed.
 In case you do, update Npm to latest version:
 ```
 npm install npm@latest -g
@@ -57,14 +57,14 @@ This environment needs a predefined packages to work with. Find directory of fol
 npm install
 ```
 
-Once you've got node_modules folder with needed packages, you have 2 commands in disposal:
+Once you've got node_modules folder with needed packages, you have 2 commands in disposal.
 
-Launch environment
+Launch environment:
 ```
 gulp watch
 ```
 
-Compile and get it ready for release
+Compile and get it ready for release:
 ```
 gulp build
 ```
