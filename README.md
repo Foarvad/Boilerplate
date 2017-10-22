@@ -37,7 +37,7 @@ It has some frequently used libraries that i use on daily basis.
 ### Node.js
 
 Gulp needs [Node.js](https://nodejs.org/en) installed in order to work.
-Check if your Node.js is installed. Open Command Prompt(cmd) and paste:
+Once you've done it, check if your Node.js is installed properly. Open Command Prompt and paste:
 ```
 node -v
 ```
