@@ -10,7 +10,7 @@ postcss			= require('gulp-postcss'), // Sass sytnax in css
 sourcemaps		= require('gulp-sourcemaps'), //Deep analysis for file direction
 // cssnext			= require('postcss-cssnext'), // CSS4 syntax
 autoprefixer			= require('autoprefixer'), // Autoprefixer for older browsers
-precss				= require('precss'), //SASS syntax
+stylus 				= require('gulp-stylus'),
 cssgrace			= require('cssgrace'), // Insert IE hacks for css
 mediaPacker		= require('css-mqpacker'), // Gather all media queries together
 cssshort      		= require('postcss-short'), // Shortcuts for css properties
@@ -92,8 +92,7 @@ gulp.task('pug', function() {
 
 
 //CSS CSS CSS
-var processors = [
-	precss,
+var processors = [	
 	cssshort,
 	imageset,
 	autoprefixer({
@@ -103,9 +102,10 @@ var processors = [
 
 gulp.task('сss', function () {
 
-	return gulp.src('src/styles/*.css')
-	.pipe( sourcemaps.init())
-	.pipe( postcss(processors) )
+	return gulp.src('src/styles/*.styl')
+	.pipe(sourcemaps.init())
+	.pipe(stylus())
+	.pipe(postcss(processors) )
 	.on('error', function(err) {
           notify({ title: 'CSS task error!' }).write(err.message);
           this.emit('end');
@@ -162,7 +162,7 @@ gulp.task('images', function() {
 //DEV //DEV //DEV
 
 gulp.task('watch', ['browser-sync', 'clean', 'movesub', 'сss', 'pug', 'fileIncludeJs', 'css-libs', 'scripts'], function() {
-	gulp.watch('src/styles/**/*.css', ['сss']);
+	gulp.watch('src/styles/**/*.styl', ['сss']);
 	gulp.watch('src/html/**/*.pug', ['pug']);
 	gulp.watch('src/js/**/*.js', ['fileIncludeJs']);
 	gulp.watch('src/img/**/*, [images]')
