@@ -52,7 +52,7 @@ npm install npm@latest -g
 
 ### Running the environment
 
-This environment needs a predefined packages to work with. Find directory of folder with Command Prompt and paste:
+This environment needs predefined packages to work with. Find directory of folder with Command Prompt and paste:
 ```
 npm install
 ```
