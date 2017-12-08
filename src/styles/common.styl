@@ -1,20 +1,17 @@
-@require "utilities/index.styl"
-@require "fonts/index.styl"
+@require "utilities/*"
 @require "default/index.styl"
-@require "components/index.styl"
+@require "layout/*"
+@require "components/*"
 
-input, textarea
- 	border none
- 	outline none
-
-*
-	box-sizing border-box
-	&:before, &:after
-		box-sizing border-box
 
 html
 	font-size 62.5%
 	line-height 62.5%
-
+	min-height 100%
+	
+body
+	min-height 100%
 
 /*————————————————————————*/
+
+@require "pages/*"

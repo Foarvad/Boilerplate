@@ -61,7 +61,7 @@ Once you've got node_modules folder with needed packages, you have 2 commands in
 
 Launch environment:
 ```
-gulp watch
+gulp dev
 ```
 
 Compile and get it ready for release:

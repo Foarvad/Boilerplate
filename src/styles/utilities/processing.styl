@@ -14,9 +14,12 @@ img-shadow = 0 40px 102px -12px rgba(80,91,96, 0.65)
 
 
 /*Media ——————————————————————————*/
-// xs-width = 768px
-// sm-width = 1024px
-// lg-width = 1600px
+
+xsh-height = 415
+xsh-width = 737
+xs-width = 768
+sm-width = 1024
+lg-width = 1600
 
 
 
@@ -59,14 +62,20 @@ hor()
 	right auto
 	transform translate(-50%, 0)
 
+clearfix()
+	zoom 1
+	&:after
+	&:before
+		content ""
+		display table
+	&:after
+		clear both
+
 /*MIXIN Media —————————————————————*/
 
 
-xs-width = 768
-sm-width = 1024
-lg-width = 1600
-
-xs = "(max-width: + " + (xs-width - 1) + "px)"
-sm = "(min-width: + " + xs-width + "px) and (max-width: + " + (sm-width - 1) + "px)"
-md = "(min-width: + " + sm-width + "px)"
-lg = "(min-width: + " + lg-width + "px)"
+xsh = "(max-width: " + xsh-width + "px) and (max-height: " + xsh-height + "px) and (orientation: landscape)"
+xs = "(max-width: " + (xs-width - 1) + "px)"
+sm = "(min-width: " + xs-width + "px) and (max-width: " + (sm-width - 1) + "px)"
+md = "(min-width: " + sm-width + "px)"
+lg = "(min-width: " + lg-width + "px)"
