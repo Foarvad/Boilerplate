@@ -1,12 +1,7 @@
 class Preloader {
-    constructor(id) {
+    constructor(className) {
         this.isLocked = false;
-        this.el = document.querySelector(id);
-        this.el.onclick = (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-        };
+        this.el = document.querySelector(className);
     }
 
     lock() {
@@ -19,13 +14,13 @@ class Preloader {
 
     show(callback) {
         if (this.isLocked) return false;
-        this.el.classList.add("b-preloader--active");
+        this.el.classList.add("isActive");
         if (callback) callback();
     }
 
     hide(callback) {
         if (this.isLocked) return false;
-        this.el.classList.remove("b-preloader--active");
+        this.el.classList.remove("isActive");
         if (callback) callback();
     }
 

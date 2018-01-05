@@ -115,7 +115,7 @@ gulp.task('styles', function() {
 
 // ———————————————————————————————————————————
 gulp.task('scripts:single', function() {
-    return gulp.src('src/js/*.js', { since: gulp.lastRun('scripts:single') })
+    return gulp.src('src/js/*.js')
         .pipe(include()).on('error', console.error)
         .pipe(babel({
             presets: ['es2015']
@@ -204,11 +204,11 @@ gulp.task('clear', function (callback) {
 //DEV //DEV //DEV
 
 gulp.task('watch', gulp.series('clean:dist', gulp.parallel('templates:all', 'styles', 'scripts:all', 'vendor:css', 'vendor:js', 'assets'), function() {
-    gulp.watch(['src/html/template/*.pug','src/html/layout/**/*.pug','src/html/components/**/*.pug'], gulp.series('templates:all', 'reload'));
+    gulp.watch(['src/html/template/*.pug','src/html/include/**/*.pug'], gulp.series('templates:all', 'reload'));
     gulp.watch(['src/html/*.pug'], gulp.series('templates:single', 'reload'));
     gulp.watch('src/styles/**/*.*', gulp.series('styles', 'reload'));
-    gulp.watch('src/js/*.*', gulp.series('scripts:single', 'reload'));
-    gulp.watch(['src/js/classes/**/*.*', 'src/js/chunks/**/*.*'], gulp.series('scripts:all', 'reload'));
+    gulp.watch(['src/js/*.*', 'src/js/pages/**/*.*'], gulp.series('scripts:single', 'reload'));
+    gulp.watch(['src/js/widgets/**/*.*', 'src/js/chunks/**/*.*'], gulp.series('scripts:all', 'reload'));
     gulp.watch(['src/assets/**/*.*', '!src/assets/img/**/*.*'], gulp.series('assets', 'reload'));
     gulp.watch('src/assets/img/**/*.*', gulp.series('images', 'reload'));
     gulp.watch('src/vendor/**/*.css', gulp.series('vendor:css', 'reload'));
